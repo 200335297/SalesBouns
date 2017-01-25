@@ -32,11 +32,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Employeename = new System.Windows.Forms.TextBox();
+            this.EmployeeId = new System.Windows.Forms.TextBox();
+            this.HoursWorked = new System.Windows.Forms.TextBox();
+            this.TotalSales = new System.Windows.Forms.TextBox();
+            this.SalesBouns = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -84,41 +84,41 @@
             this.radioButton1.Text = "English";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // Employeename
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 187);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 1;
+            this.Employeename.Location = new System.Drawing.Point(122, 187);
+            this.Employeename.Name = "Employeename";
+            this.Employeename.Size = new System.Drawing.Size(159, 20);
+            this.Employeename.TabIndex = 1;
             // 
-            // textBox2
+            // EmployeeId
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 228);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 20);
-            this.textBox2.TabIndex = 2;
+            this.EmployeeId.Location = new System.Drawing.Point(122, 228);
+            this.EmployeeId.Name = "EmployeeId";
+            this.EmployeeId.Size = new System.Drawing.Size(134, 20);
+            this.EmployeeId.TabIndex = 2;
             // 
-            // textBox3
+            // HoursWorked
             // 
-            this.textBox3.Location = new System.Drawing.Point(122, 273);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 20);
-            this.textBox3.TabIndex = 3;
+            this.HoursWorked.Location = new System.Drawing.Point(122, 273);
+            this.HoursWorked.Name = "HoursWorked";
+            this.HoursWorked.Size = new System.Drawing.Size(134, 20);
+            this.HoursWorked.TabIndex = 3;
             // 
-            // textBox4
+            // TotalSales
             // 
-            this.textBox4.Location = new System.Drawing.Point(122, 306);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(134, 20);
-            this.textBox4.TabIndex = 4;
+            this.TotalSales.Location = new System.Drawing.Point(122, 306);
+            this.TotalSales.Name = "TotalSales";
+            this.TotalSales.Size = new System.Drawing.Size(134, 20);
+            this.TotalSales.TabIndex = 4;
             // 
-            // textBox5
+            // SalesBouns
             // 
-            this.textBox5.Location = new System.Drawing.Point(122, 345);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(134, 20);
-            this.textBox5.TabIndex = 5;
+            this.SalesBouns.Location = new System.Drawing.Point(122, 345);
+            this.SalesBouns.Name = "SalesBouns";
+            this.SalesBouns.ReadOnly = true;
+            this.SalesBouns.Size = new System.Drawing.Size(134, 20);
+            this.SalesBouns.TabIndex = 5;
             // 
             // button1
             // 
@@ -126,8 +126,10 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
+            this.button1.Tag = "calculate";
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.CalculateSales);
             // 
             // button2
             // 
@@ -135,8 +137,10 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
+            this.button2.Tag = "print";
             this.button2.Text = "Print";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.CalculateSales);
             // 
             // button3
             // 
@@ -144,8 +148,10 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
+            this.button3.Tag = "clear";
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.CalculateSales);
             // 
             // label1
             // 
@@ -201,9 +207,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Form1
+            // MailOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -217,16 +222,15 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SalesBouns);
+            this.Controls.Add(this.TotalSales);
+            this.Controls.Add(this.HoursWorked);
+            this.Controls.Add(this.EmployeeId);
+            this.Controls.Add(this.Employeename);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MailOrder";
             this.Text = "Sales Bouns";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -240,11 +244,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Employeename;
+        private System.Windows.Forms.TextBox EmployeeId;
+        private System.Windows.Forms.TextBox HoursWorked;
+        private System.Windows.Forms.TextBox TotalSales;
+        private System.Windows.Forms.TextBox SalesBouns;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
